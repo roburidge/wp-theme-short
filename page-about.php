@@ -5,9 +5,9 @@ Template Name: About Page
 ?>
 <?php
 global $post;
-$intro = wpautop(get_post_meta( $post->ID, '_cmb_intro_text', true ));
-$image1 = esc_url(get_post_meta( $post->ID, '_cmb_image_1', true ));
-$image2 = esc_url(get_post_meta( $post->ID, '_cmb_image_2', true ));
+$intro = wpautop(get_post_meta( $post->ID, '_short_about_intro_text', true ));
+$image1 = esc_url(get_post_meta( $post->ID, '_short_about_left_hero_image', true ));
+$image2 = esc_url(get_post_meta( $post->ID, '_short_about_right_hero_image', true ));
 ?>
 
 <?php get_header(); ?>

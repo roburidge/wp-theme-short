@@ -14,15 +14,14 @@ GENERAL STYLES
 *********************/
 
 body {
-  @include css-gradient(#1b1464,#3473b9);
-  background-repeat: no-repeat;
+  background: #3473b9;
 }
 #content {
   margin-top: 0;
 }
 #inner-content {
   background: #eee;
-  box-shadow: 0px 20px 20px 0px #000;
+  box-shadow: 0px 20px 40px -10px #000;
   padding: 2.2em 4.4em 0;
 }
 
@@ -48,13 +47,13 @@ FOOTER STYLES
   .wrap {
     background: $white;
     border-top: 1px solid #ccc;
-    box-shadow: 0px 20px 20px 0px #000;
+    box-shadow: 0px 20px 40px -10px #000;
     padding: 0 5.5em;
   }
 }
 .main-footer {
-  @include css-gradient(#818181,#353535);
-  box-shadow: 0px 20px 20px 0px #000;
+  background: #222;
+  box-shadow: 0px 20px 40px -10px #000;
   padding: 0 5.5em;
   text-align: left;
 }

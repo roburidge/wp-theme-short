@@ -131,6 +131,59 @@ function short_register_contact_template_metabox() {
 
 }
 
+add_action( 'cmb2_init', 'short_register_about_template_metabox' );
+/**
+ * Define the metabox and field configurations.
+ */
+function short_register_about_template_metabox() {
+
+  // Start with an underscore to hide fields from custom fields list
+  $prefix = '_short_about_';
+
+  /**
+   * Initiate the metabox
+   */
+  $cmb = new_cmb2_box( array(
+    'id'           => 'about-page',
+    'title'        => 'About Page',
+    'object_types' => array( 'page' ), // post type
+    'show_on'      => array( 'key' => 'page-template', 'value' => 'page-about.php' ),
+    'context'      => 'normal', //  'normal', 'advanced', or 'side'
+    'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
+    'show_names'   => true // Show field names on the left
+  ) );
+
+  $cmb->add_field( array(
+    'name' => 'Intro Text',
+    'desc' => 'Text block immediately after page title.',
+    'id' => $prefix . 'intro_text',
+    'type' => 'textarea'
+  ) );
+
+  $cmb->add_field( array(
+    'name'    => 'Left Hero Image',
+    'desc'    => 'Upload an image or enter an URL.',
+    'id'      => $prefix . 'left_hero_image',
+    'type'    => 'file',
+    // Optionally hide the text input for the url:
+    'options' => array(
+      'url' => false,
+    )
+  ) );
+
+  $cmb->add_field( array(
+    'name'    => 'Right Hero Image',
+    'desc'    => 'Upload an image or enter an URL.',
+    'id'      => $prefix . 'right_hero_image',
+    'type'    => 'file',
+    // Optionally hide the text input for the url:
+    'options' => array(
+      'url' => false,
+    )
+  ) );
+
+}
+
 
 /**
  * CMB2 Theme Options
